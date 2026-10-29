@@ -1,0 +1,22 @@
+public class Prestamo {
+    // Atributos de tipo Usuario y Libro
+    private Usuario usuario;
+    private Libro libro;
+ 
+    // Constructor
+    public Prestamo(Usuario usuario, Libro libro) {
+        this.usuario = usuario;
+        this.libro = libro;
+    }
+ 
+    // Intenta prestar el libro y muestra un mensaje segun el resultado
+    public void registrar() {
+        if (libro.prestar()) {
+            System.out.println("Prestamo exitoso: " + usuario.getNombre()
+                    + " se llevo \"" + libro.getTitulo() + "\".");
+        } else {
+            System.out.println("Lo siento " + usuario.getNombre()
+                    + ", \"" + libro.getTitulo() + "\" no esta disponible.");
+        }
+    }
+}
