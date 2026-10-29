@@ -1,0 +1,22 @@
+public class Ejercicio4 {
+    public static void main(String[] args) {
+        Cuenta cuenta1 = new Cuenta("Ana", 500.0);
+        Cuenta cuenta2 = new Cuenta("Luis", 200.0);
+ 
+        System.out.println("Saldos iniciales:");
+        cuenta1.mostrar();
+        cuenta2.mostrar();
+        System.out.println("-----------------------------");
+ 
+        // Transferencia valida
+        cuenta1.transferir(cuenta2, 150.0);
+ 
+        // Transferencia que falla
+        cuenta2.transferir(cuenta1, 1000.0);
+ 
+        System.out.println("-----------------------------");
+        System.out.println("Saldos finales:");
+        cuenta1.mostrar();
+        cuenta2.mostrar();
+    }
+}
