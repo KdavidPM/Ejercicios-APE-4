@@ -1,0 +1,32 @@
+public class Libro {
+    // Atributos
+    private String titulo;
+    private boolean disponible;
+ 
+    // Constructor: todo libro nuevo empieza disponible
+    public Libro(String titulo) {
+        this.titulo = titulo;
+        this.disponible = true;
+    }
+ 
+    // Getter del titulo
+    public String getTitulo() {
+        return titulo;
+    }
+ 
+    // Intenta prestar el libro. Devuelve true si se pudo.
+    public boolean prestar() {
+        if (disponible) {
+            disponible = false;
+            return true;
+        } else {
+            return false;
+        }
+    }
+ 
+    // El libro vuelve a estar disponible
+    public void devolver() {
+        disponible = true;
+    }
+}
+ 
