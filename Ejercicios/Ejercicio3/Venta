@@ -1,0 +1,20 @@
+public class Venta {
+    // Atributo
+    private int cantidad;
+ 
+    // Constructor
+    public Venta(int cantidad) {
+        this.cantidad = cantidad;
+    }
+ 
+    // Recibe un objeto Producto como parametro
+    public void aplicar(Producto producto) {
+        boolean exito = producto.reducirStock(cantidad);
+        if (exito) {
+            double total = cantidad * producto.getPrecio();
+            System.out.println("Venta realizada. Total a pagar: $" + total);
+        } else {
+            System.out.println("La venta no se pudo realizar.");
+        }
+    }
+}
