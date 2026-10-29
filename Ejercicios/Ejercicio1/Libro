@@ -1,0 +1,21 @@
+class Libro {
+    // Atributos (autor es un objeto de tipo Autor)
+    private String titulo;
+    private int anio;
+    private Autor autor;
+ 
+    // Constructor
+    public Libro(String titulo, int anio, Autor autor) {
+        this.titulo = titulo;
+        this.anio = anio;
+        this.autor = autor;
+    }
+ 
+    // Metodo que imprime la informacion del libro
+    public void mostrarInformacion() {
+        System.out.println("Titulo: " + titulo);
+        System.out.println("Anio: " + anio);
+        System.out.println("Autor: " + autor.getNombre());
+        System.out.println("-----------------------------");
+    }
+}
