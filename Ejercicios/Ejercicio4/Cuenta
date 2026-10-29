@@ -1,0 +1,40 @@
+public class Cuenta {
+    // Atributos
+    private String titular;
+    private double saldo;
+ 
+    // Constructor
+    public Cuenta(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+ 
+    // Getter del titular
+    public String getTitular() {
+        return titular;
+    }
+ 
+    // Agrega dinero a la cuenta
+    public void depositar(double monto) {
+        saldo = saldo + monto;
+    }
+ 
+    // Recibe otra Cuenta como parametro
+    public void transferir(Cuenta destino, double monto) {
+        if (monto <= saldo) {
+            saldo = saldo - monto;      // se retira de esta cuenta
+            destino.depositar(monto);   // se deposita en la cuenta destino
+            System.out.println("Transferencia de $" + monto + " de "
+                    + titular + " a " + destino.getTitular() + " realizada.");
+        } else {
+            System.out.println("Fondos insuficientes. " + titular
+                    + " no puede transferir $" + monto);
+        }
+    }
+ 
+    // Muestra los datos de la cuenta
+    public void mostrar() {
+        System.out.println("Titular: " + titular + " | Saldo: $" + saldo);
+    }
+}
+ 
