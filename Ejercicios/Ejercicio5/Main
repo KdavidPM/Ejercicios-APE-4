@@ -1,0 +1,20 @@
+public class Ejercicio5 {
+    public static void main(String[] args) {
+        Usuario usuario1 = new Usuario("Carlos", "1801234567");
+        Usuario usuario2 = new Usuario("Maria", "1807654321");
+ 
+        Libro libro = new Libro("El principito");
+ 
+        // Dos usuarios intentan pedir el mismo libro
+        Prestamo prestamo1 = new Prestamo(usuario1, libro);
+        Prestamo prestamo2 = new Prestamo(usuario2, libro);
+ 
+        prestamo1.registrar();  // este si funciona
+        prestamo2.registrar();  // este falla porque ya esta prestado
+ 
+        // Carlos devuelve el libro y Maria lo vuelve a intentar
+        libro.devolver();
+        System.out.println("El libro fue devuelto.");
+        prestamo2.registrar();
+    }
+}
